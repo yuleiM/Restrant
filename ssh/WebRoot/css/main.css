@@ -68,7 +68,8 @@ A:hover {
 	
 }
 .nav_list a{color: #FFFFFF;}
-.content{width: 947px;margin: 20px auto;height: 100%}
+.content{width: 947px;margin: 20px auto;height: 100%；background: #FFFFFF}
+.manager{width: 947px;margin: 0 auto;background: #FFFFFF;}
 .context{background: #FFFFFF}
 .list{width: 947px;margin: 25px auto;height: 70px;background: #FFFFFF}
 .list_ul{margin-left: 20px}

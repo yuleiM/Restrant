@@ -28,7 +28,7 @@
         <property name="mealImage" type="java.lang.String">
             <column name="MealImage" length="20" />
         </property>
-        <set name="orderdtses" inverse="true">
+        <set name="orderdtses" inverse="true" lazy="false" cascade="delete">
             <key>
                 <column name="MealId" />
             </key>

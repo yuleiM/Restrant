@@ -4,7 +4,11 @@ public class Pager {
 	private int curPage;//待显示页
 	private int perPageRows ;//一页显示的记录数  
 	private int rowCount; //记录总数  
-	private int pageCount; //总页数 	
+	private int pageCount; //总页数
+
+	public void setPageCount(int pageCount) {
+		this.pageCount = pageCount;
+	}
 	public int getCurPage() {
 		return curPage;
 	}

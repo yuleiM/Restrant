@@ -10,10 +10,10 @@
             <column name="ODID" />
             <generator class="native"></generator>
         </id>
-        <many-to-one name="meal" class="com.yl.entity.Meal" fetch="select">
+        <many-to-one name="meal" class="com.yl.entity.Meal" fetch="select"  lazy="false">
             <column name="MealId" />
         </many-to-one>
-        <many-to-one name="orders" class="com.yl.entity.Orders" fetch="select">
+        <many-to-one name="orders" class="com.yl.entity.Orders" fetch="select" lazy="false" cascade="save-update">
             <column name="OID" />
         </many-to-one>
         <property name="mealPrice" type="java.lang.Double">

@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,36 +110,20 @@ A:hover {
 	<div class="mainbox">
 		<div class="context">
 			<div class="list">
-				<form action="register" method="post">
-					<input type="text" class="usna" placeholder="菜名" name="meal.mealName"/>
-					<select name="meal.mealseries.seriesId" class="se">
-						<option value="">--请选择类型--</option>
-						<c:forEach var="meal" items="${mealSeriesList}">
-							<option value="${meal.seriesId}">${meal.seriesName}</option>
-						</c:forEach>
-					</select>
-					 <input type="text" class="usna" placeholder="摘要" name="meal.mealSummarize"/>
-					 <input type="text" class="usna" placeholder="介绍" name="meal.mealDescription"/> 
-					 <input type="text" class="usna" placeholder="价格" name="meal.mealPrice"/> 
-					 <input type="file" name="doc" placeholder="图片"/>
-					 <input type="submit" class="sub" value="添加" />
-					 <a href="javascript :;" onClick="javascript :history.back(-1);" style="display: block;width: 500px;height: 60px;margin: 25px auto;background: #4CD964;border-radius: 10px;font-size: 22px;color: #FFFFFF;line-height: 60px;text-align: center;">返回</a>
-				</form>
+				<s:form action="doAddMeal" method="post" enctype="multipart/form-data">
+							<s:textfield name="meal.mealName"  placeholder="菜名" cssClass="usna" />
+							<s:select name="meal.mealseries.seriesId" placeholder="菜系" list="#request.mealSeriesList"  cssClass="se" listKey="seriesId" listValue="seriesName" />  
+							<s:textfield name="meal.mealSummarize" placeholder="摘要"  cssClass="usna"/>
+							<s:textfield name="meal.mealDescription" placeholder="介绍"  cssClass="usna"/>
+							<s:textfield name="meal.mealPrice" placeholder="价格"  cssClass="usna"/>
+							<s:file name="doc" placeholder="图片"  cssClass="usna"/>
+							<s:submit value="确定" align="center"  cssClass="sub"/>
+					</s:form>
+					<a href="javascript :;" onClick="javascript :history.back(-1);" style="display: block;width: 500px;height: 60px;margin: 25px auto;background: #4CD964;border-radius: 10px;font-size: 22px;color: #FFFFFF;line-height: 60px;text-align: center;">返回</a>
 			</div>
 		</div>
 	</div>
 	
- 	 <ul> 
- 		<c:forEach var="meal" items="${mealSeriesList}"> 
- 			<li> 
- 				${meal.seriesName} 
- 				<ul> 
- 					<c:forEach var="m" items="${meal.meals}"> 
- 						<li>${m.mealName}</li> 
- 					</c:forEach> 
- 				</ul> 
- 			</li> 
- 		</c:forEach> 
- 	</ul>  
+ 	
 </body>
 </html>

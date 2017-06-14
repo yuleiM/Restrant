@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <jsp:include page="index_top.jsp" />
-
+ 
 <div class="content">
 	
 	<div class="list">
@@ -48,9 +48,9 @@
 									元
 								</div>
 								<a href="/ssh/toShowDetails?meal.mealId=${mealItem.mealId}"><img src="images/detail_cn.gif" border="0" width="60" height="20" /></a>
-								<a href="/ssh/addtoshopcart?mealId=${mealItem.mealId }"><img src="images/buy_cn.gif" border="0" width="60" height="20" /></a>
+								<a href="addtoshopcart?mealId=${mealItem.mealId }"><img src="images/buy_cn.gif" border="0" width="60" height="20" /></a>
 							</td>
-							<s:if test="#st.getIndex()%3==3">
+							<s:if test="#st.getIndex()%3==2">
 						</tr>
 						</s:if>
 						</s:iterator>

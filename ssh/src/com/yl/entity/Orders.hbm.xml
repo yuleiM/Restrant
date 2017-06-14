@@ -10,7 +10,7 @@
             <column name="OID" />
             <generator class="native"></generator>
         </id>
-        <many-to-one name="users" class="com.yl.entity.Users" fetch="select">
+        <many-to-one name="users" class="com.yl.entity.Users" fetch="select" lazy="false">
             <column name="UserId" />
         </many-to-one>
         <property name="orderTime" type="java.sql.Timestamp">
@@ -22,7 +22,7 @@
         <property name="orderPrice" type="java.lang.Double">
             <column name="OrderPrice" precision="8" />
         </property>
-        <set name="orderdtses" inverse="true">
+        <set name="orderdtses" inverse="true" cascade="all" lazy="false" >
             <key>
                 <column name="OID" />
             </key>
